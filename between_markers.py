@@ -6,17 +6,15 @@ def between_markers(text, begin, end):
             if begin_pos < end_pos:
                 return text[begin_pos+len(begin):end_pos]
             else:
-                return "Wrong direction"
+                return ""
         else:
-            # end_pos == -1
-            return text[begin_pos+len(begin):end] , "No closed"  
+            return text[begin_pos+len(begin): len(text)] 
     else:   
         end_pos = text.find(end)
         if end_pos != -1:
-            print(text[0: end_pos])
-            return text[0: end_pos], "No opened"
+            return text[0: end_pos]
         else:
-            return 'No markers at all'
+            return text 
 
 if __name__ == '__main__':
     print('Example:')
