@@ -1,4 +1,4 @@
-def between_markers(text: str, begin: str, end: str) -> str:
+def between_markers(text, begin, end):
     begin_pos = text.find(begin)
     if begin_pos != -1:   
         end_pos = text.find(end, begin_pos+1, len(text))
