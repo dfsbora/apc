@@ -1,20 +1,23 @@
 def between_markers(text, begin, end):
     begin_pos = text.find(begin)
     if begin_pos != -1:   
-        end_pos = text.find(end, begin_pos+1, len(text))
-        if end_pos != -1:
-            if begin_pos < end_pos:
+        end_pos = text.find(end)
+        if end_pos != -1:  #abriu e fechou
+            if begin_pos < end_pos:  #ordem certa
                 return text[begin_pos+len(begin):end_pos]
-            else:
-                return ""
-        else:
+            else:    #ordem errada
+                print("ordem errada")
+                print(text)
+                return ''
+        else:   #abriu mas nao fechou
             return text[begin_pos+len(begin): len(text)] 
     else:   
         end_pos = text.find(end)
-        if end_pos != -1:
+        if end_pos != -1: #nao abriu mas fechou
             return text[0: end_pos]
         else:
-            return text 
+            return text    #nao abriu nem fechou
+
 
 if __name__ == '__main__':
     print('Example:')
@@ -28,4 +31,5 @@ if __name__ == '__main__':
     assert between_markers('No [b]hi', '[b]', '[/b]') == 'hi', 'No close'
     assert between_markers('No hi', '[b]', '[/b]') == 'No hi', 'No markers at all'
     assert between_markers('No <hi>', '>', '<') == '', 'Wrong direction'
+    assert between_markers("No <hi> one", ">", "<") == '', 'Wrong direction'
     print('Wow, you are doing pretty good. Time to check it!')
