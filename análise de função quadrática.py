@@ -35,16 +35,16 @@ def y_do_vértice(a,b,c):
     else:
         print("Não é quadrática")
 
-if operacao==raiz1:
+if operacao=="raiz1":
     raiz1(num1,num2,num3)
 
-elif operacao==raiz2:
+elif operacao=="raiz2":
     raiz2(num1,num2,num3)
 
-elif operacao==x_do_vértice:
+elif operacao=="xv":
     x_do_vértice(num1,num2)
 
-elif operacao==y_do_vértice:
+elif operacao=="yv":
     y_do_vértice(num1,num2,num3)
 
 else:
