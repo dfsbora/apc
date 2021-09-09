@@ -7,29 +7,36 @@ num3=int(sys.argv[4])#c
 
 def raiz1(a,b,c):
     if a !=0:
-        resultado= -b+sqrt(b**2-4*a*c)/2*a
-        print(resultado)
+        try:
+            resultado= -b+sqrt(b**2-4*a*c)/2*a
+            print(resultado)
+        except:
+            print("Fora do dominio")
     else:
         print("Não é uma função quadrática")
 
 
 def raiz2(a,b,c):
     if a !=0:
-        resultado= -b-sqrt(b**2-4*a*c)/2*a
-        print(resultado)
+        try:
+            resultado= -b-sqrt(b**2-4*a*c)/2*a
+            print(resultado)
+        except:
+            print("Fora do dominio")
     else:
         print("Não é uma função quadrática")
 
 
-def x_do_vértice(a,b):
+def x_do_vertice(a,b):
     if a!=0:
         resultado= -b/2*a
         print(resultado)
     else:
         print("Não é quadrática")
 
-def y_do_vértice(a,b,c):
+def y_do_vertice(a,b,c):
     if a!=0:
+        #TODO incluir o try except de dominio aqui tambem
         resultado= -sqrt(b**2-4*a*c)/4*a
         print(resultado)
     else:
@@ -42,10 +49,10 @@ elif operacao=="raiz2":
     raiz2(num1,num2,num3)
 
 elif operacao=="xv":
-    x_do_vértice(num1,num2)
+    x_do_vertice(num1,num2)
 
 elif operacao=="yv":
-    y_do_vértice(num1,num2,num3)
+    y_do_vertice(num1,num2,num3)
 
 else:
     print("Digte uma operação válida")
